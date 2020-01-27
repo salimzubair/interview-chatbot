@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:11 AS builder
 WORKDIR /app
-COPY . .
+COPY ./my-react-app .
 RUN yarn run build
 
 FROM mhart/alpine-node
