@@ -1,6 +1,6 @@
 # Project Title
 
-React app with Rasa chatbox and Postgres integration. 
+React app with Rasa chatbot and Postgres integration. 
 
 ## Getting Started
 
