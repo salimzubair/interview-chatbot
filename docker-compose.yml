@@ -3,13 +3,15 @@ version: '3.0'
 services:
 
   react:
-    name: react-app
-    build: ./conf/react/Dockerfile
-    ports: "3000:3000"
+    container_name: react-app
+    build: 
+      context: ./conf/react
+    ports: 
+    - "3000:3000"
 
 
   rasa:
-    name: rasa
+    container_name: rasa
     image: rasa/rasa:latest-full
     networks: ['rasa-network']
     ports:
@@ -20,7 +22,7 @@ services:
     - run
 
   action_server:
-    name:  rasa-action
+    container_name:  rasa-action
     image: rasa/rasa-sdk:latest
     networks: ['rasa-network']
     ports:
@@ -29,14 +31,14 @@ services:
     - "./rasa-app-data/actions:/app/actions"
 
   duckling:
-    name: rasa-duckling
+    container_name: rasa-duckling
     image: rasa/duckling:latest
     networks: ['rasa-network']
     ports:
     - "8000:8000"
 
   db:
-    name: postgres
+    container_name: postgres
     image: postgres
     restart: always
     environment:
