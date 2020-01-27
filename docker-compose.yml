@@ -9,7 +9,6 @@ services:
     ports: 
     - "80:80"
 
-
   rasa:
     container_name: rasa
     image: rasa/rasa:latest-full
