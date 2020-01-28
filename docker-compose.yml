@@ -45,6 +45,8 @@ services:
     - "5432:5432"
     restart: always
     environment:
-      POSTGRES_PASSWORD: "{POSTGRESS_PASSWORD}"
+    - POSTGRES_PASSWORD: ${POSTGRESS_PASSWORD}
+    - POSTGRES_DB: ${POSTGRES_DB}
+    - POSTGRES_USER: ${POSTGRES_USER}
 
 networks: {rasa-network: {}}
