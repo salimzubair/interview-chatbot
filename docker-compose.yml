@@ -41,6 +41,8 @@ services:
     container_name: postgres
     image: postgres
     networks: ['rasa-network']
+    ports: 
+    - "5432:5432"
     restart: always
     environment:
       POSTGRES_PASSWORD: "{POSTGRESS_PASSWORD}"
