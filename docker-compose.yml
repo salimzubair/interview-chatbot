@@ -8,45 +8,45 @@ services:
       context: ./conf/react
     networks: ['rasa-network']
     ports: 
-    - "80:80"
+      - "80:80"
 
   rasa:
     container_name: rasa
     image: rasa/rasa:latest-full
     networks: ['rasa-network']
     ports:
-    - "5005:5005"
+      - "5005:5005"
     volumes:
-    - "./rasa-app-data/:/app/"
+      - "./rasa-app-data/:/app/"
     command:
-    - run
+      - run
 
   action_server:
     container_name:  rasa-action
     image: rasa/rasa-sdk:latest
     networks: ['rasa-network']
     ports:
-    - "5055:5055"
+      - "5055:5055"
     volumes:
-    - "./rasa-app-data/actions:/app/actions"
+      - "./rasa-app-data/actions:/app/actions"
 
   duckling:
     container_name: rasa-duckling
     image: rasa/duckling:latest
     networks: ['rasa-network']
     ports:
-    - "8000:8000"
+      - "8000:8000"
 
   db:
     container_name: postgres
     image: postgres
     networks: ['rasa-network']
     ports: 
-    - "5432:5432"
+      - "5432:5432"
     restart: always
     environment:
-    - POSTGRES_PASSWORD: ${POSTGRESS_PASSWORD}
-    - POSTGRES_DB: ${POSTGRES_DB}
-    - POSTGRES_USER: ${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
 
 networks: {rasa-network: {}}
