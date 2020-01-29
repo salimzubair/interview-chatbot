@@ -22,6 +22,9 @@ services:
       - run
       - -m
       - models
+      - --enable-api
+      - --cors
+      - "*"
 
 
   action_server:
