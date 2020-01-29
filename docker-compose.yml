@@ -20,6 +20,9 @@ services:
       - "./rasa-app-data/:/app/"
     command:
       - run
+      - -m
+      - models
+
 
   action_server:
     container_name:  rasa-action
