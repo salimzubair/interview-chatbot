@@ -30,9 +30,9 @@ tracker_store:
   dialect: "postgresql"
   url: "db"
   port: 5432
-  db: secret
+  db: postgres
   username: postgres
-  password: example
+  password: secret
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/api/event-brokers/
