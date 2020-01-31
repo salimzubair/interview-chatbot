@@ -5,6 +5,7 @@ React app with Rasa chatbot and Postgres integration.
 ## Getting Started
 
 1. Clone the repo.
+2. move .env-example to .env (If you wish, you can change the values but then be sure to update endpoints.yaml)
 2. Run ```docker-compose up -d```
 3. Profit.
 
